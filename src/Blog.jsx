@@ -1,34 +1,44 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
+import { Header } from './components';
 import styled from 'styled-components';
 
+const Appcolumn = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 1000px;
+	min-height: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+`;
+
 const Content = styled.div`
-	padding: 120px 0;
+	paddivg: 120px 0;
 `;
 
 const H2 = styled.h2`
-text-align: center;
+	text-align: center;
 `;
 
-const Header = () => <div>Шапка</div>;
 const Footer = () => <div>Футер</div>;
 
 export const Blog = () => {
 	return (
-		<>
+		<Appcolumn>
 			<Header />
 			<Content>
 				<H2>Контент страницы</H2>
 				<Routes>
-					<Route path="/" element={<din>Главная страница</din>} />
-					<Route path="/ogin" element={<din>Авторизация</din>} />
-					<Route path="/register" element={<din>Регистрация</din>} />
-					<Route path="/users" element={<din>Пользователи</din>} />
-					<Route path="/post/" element={<din>Новая статья</din>} />
-					<Route path="/post/:postId" element={<din>Статья</din>} />
-					<Route path="*" element={<din>Ошибка</din>} />
+					<Route path="/" element={<div>Главная страница</div>} />
+					<Route path="/login" element={<div>Авторизация</div>} />
+					<Route path="/register" element={<div>Регистрация</div>} />
+					<Route path="/users" element={<div>Пользователи</div>} />
+					<Route path="/post/" element={<div>Новая статья</div>} />
+					<Route path="/post/:postId" element={<div>Статья</div>} />
+					<Route path="*" element={<div>Ошибка</div>} />
 				</Routes>
 			</Content>
 			<Footer />
-		</>
+		</Appcolumn>
 	);
 };
