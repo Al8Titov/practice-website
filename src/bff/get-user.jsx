@@ -1,4 +1,4 @@
-import { getUsers } from './get-users'
+import { getUsers } from './get-users';
 
 export const gertUser = async (loginToFind) => {
 	const users = await getUsers();
