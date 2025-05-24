@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 import { useStore } from 'react-redux';
 
 export const useResetForm = (reset) => {
@@ -7,13 +7,13 @@ export const useResetForm = (reset) => {
 	useEffect(() => {
 		let currentWasLogout = store.getState().app.wastLogout;
 
-return store.subscribe(() => {
-	let previousWasLogout = currentWasLogout;
-	currentWasLogout = store.getState().app.wastLogout;
+		return store.subscribe(() => {
+			let previousWasLogout = currentWasLogout;
+			currentWasLogout = store.getState().app.wastLogout;
 
-	if (currentWasLogout !== previousWasLogout) {
-		reset();
-	}
-});
+			if (currentWasLogout !== previousWasLogout) {
+				reset();
+			}
+		});
 	}, [reset, store]);
-}
+};

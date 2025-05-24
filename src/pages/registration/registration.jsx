@@ -1,18 +1,16 @@
 import { useState } from 'react';
-import { useDispatch, useSelector, } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { server } from '../../bff';
-import { AuthFormError, Button, H2, Input, } from '../../components';
+import { AuthFormError, Button, H2, Input } from '../../components';
 import { useResetForm } from '../../hooks';
 import { setUser } from '../../actions';
 import { selectUserRole } from '../../selectors';
 import { ROLE } from '../../constants';
 import styled from 'styled-components';
-
-
 
 const regFormSchema = yup.object().shape({
 	login: yup
@@ -30,13 +28,11 @@ const regFormSchema = yup.object().shape({
 		)
 		.min(6, 'Невверно заполнен пароль. Минимум 6 символов')
 		.max(30, 'Неверно заполнен пароль. Максимум 30 символов'),
-		passcheck: yup
+	passcheck: yup
 		.string()
 		.required('Заполните повтор пароля')
-		.oneOf([yup.ref('password'), null], 'Повтор пароля не совподает')
+		.oneOf([yup.ref('password'), null], 'Повтор пароля не совподает'),
 });
-
-
 
 const RegistrationContainer = ({ className }) => {
 	const {
@@ -61,7 +57,6 @@ const RegistrationContainer = ({ className }) => {
 
 	useResetForm(reset);
 
-
 	const onSubmit = ({ login, password }) => {
 		server.register(login, password).then(({ error, res }) => {
 			if (error) {
@@ -73,7 +68,8 @@ const RegistrationContainer = ({ className }) => {
 		});
 	};
 
-	const formError = errors?.login?.message || errors?.password?.message || errors?.passcheck?.message;
+	const formError =
+		errors?.login?.message || errors?.password?.message || errors?.passcheck?.message;
 	const errorMessage = formError || serverError;
 
 	if (roleId !== ROLE.GUEST) {

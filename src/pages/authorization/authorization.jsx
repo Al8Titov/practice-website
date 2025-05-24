@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector, } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -11,7 +11,6 @@ import { setUser } from '../../actions';
 import { selectUserRole } from '../../selectors';
 import { ROLE } from '../../constants';
 import styled from 'styled-components';
-
 
 const authFormSchema = yup.object().shape({
 	login: yup
