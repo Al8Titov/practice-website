@@ -1,23 +1,23 @@
 import { setUserRole } from '../api';
 import { sessions } from '../sessions';
-import { ROLE } from '../constants'
+import { ROLE } from '../constants';
 
-
-export const  uddateUserRole = async (userSessions, userId, newUserRoleId) => {
+export const uddateUserRole = async (hash, userId, newUserRoleId) => {
 	const accessRoles = [ROLE.ADMIN];
 
-		if (!sessions.access(userSessions, accessRoles)) {
-			return {
-				error: 'Доступ запрешён',
-				res: null,
-			};
-		}
+	const access = await sessions.access(hash, accessRoles);
 
+	if (!access) {
+		return {
+			error: 'Доступ запрешён',
+			res: null,
+		};
+	}
 
-	 setUserRole(userId, newUserRoleId);
+	setUserRole(userId, newUserRoleId);
 
-	 return {
+	return {
 		error: null,
 		res: true,
-	 }
+	};
 };

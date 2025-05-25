@@ -1,23 +1,23 @@
 import { deleteUser } from '../api';
 import { sessions } from '../sessions';
-import { ROLE } from '../constants'
+import { ROLE } from '../constants';
 
-
-export const  removeUser = async (userSessions, userId) => {
+export const removeUser = async (hash, userId) => {
 	const accessRoles = [ROLE.ADMIN];
 
-		if (!sessions.access(userSessions, accessRoles)) {
-			return {
-				error: 'Доступ запрешён',
-				res: null,
-			};
-		}
+	const access = await sessions.access(hash, accessRoles);
 
+	if (!access) {
+		return {
+			error: 'Доступ запрешён',
+			res: null,
+		};
+	}
 
-	 deleteUser(userId);
+	deleteUser(userId);
 
-	 return {
+	return {
 		error: null,
 		res: true,
-	 }
+	};
 };

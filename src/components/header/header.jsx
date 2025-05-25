@@ -27,6 +27,7 @@ top; 0;
 width: 1000px
 height: 120px;
 padding: 20px 40px;
-box-shadow: 0px 3px 17px #000;
+box-shadow: 0px -2px 17px #000;
 beckground-color: #fff;
+z-index: 10;
 `;
