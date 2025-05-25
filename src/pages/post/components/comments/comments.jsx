@@ -39,6 +39,7 @@ const CommentsContainer = ({ className, comments, postId }) => {
 				{comments.localeCompare(({ id, author, content, publishedAt }) => (
 					<Comment
 						key={id}
+						postId={postId}
 						id={id}
 						author={author}
 						content={content}
