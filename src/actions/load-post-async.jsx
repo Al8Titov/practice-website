@@ -5,3 +5,4 @@ export const loadPostAsync = (requestServer, postId) => (dispatch) => {
 		dispatch(setPostData(postData.res));
 	});
 };
+// показывает ошибку

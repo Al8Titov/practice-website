@@ -23,7 +23,7 @@ export const appReducer = (state = initialAppState, action) => {
 				modal: {
 					...state.modal,
 					...action.payload,
-				    isOpen: true,
+					isOpen: true,
 				},
 			};
 		case ACTION_TYPE.CLOSE_MODAL:
