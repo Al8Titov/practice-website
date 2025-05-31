@@ -15,7 +15,7 @@ const HeaderContainer = ({ className }) => (
 			<br />
 			Разбор ошибок
 		</Discription>
-		<ControlPanel></ControlPanel>
+		<ControlPanel />
 	</header>
 );
 
