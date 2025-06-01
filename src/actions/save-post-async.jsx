@@ -5,4 +5,4 @@ export const savePostAsync = (requestServer, newPostData) => (dispatch) =>
 		dispatch(setPostData(updatedPost.res));
 
 		return updatedPost.res;
-		});
+	});

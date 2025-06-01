@@ -15,7 +15,7 @@ export const authorize = async (authLogin, authPassword) => {
 
 	if (authPassword !== password) {
 		return {
-			error: 'неверный пароль',
+			error: 'Неверный пароль',
 			res: null,
 		};
 	}

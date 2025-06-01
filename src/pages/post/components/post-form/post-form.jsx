@@ -19,7 +19,7 @@ const PostFormContainer = ({
 	useLayoutEffect(() => {
 		setImageUrlValue(imageUrl);
 		setTitleValue(title);
-	},[imageUrl, title])
+	}, [imageUrl, title]);
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
