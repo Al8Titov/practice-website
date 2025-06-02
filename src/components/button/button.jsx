@@ -10,9 +10,7 @@ const ButtonContainer = ({ children, className, ...props }) => {
 
 export const Button = styled(ButtonContainer)`
 	display: flex;
-	-webkit-box-pack: center;
 	justify-content: center;
-	-webkit-box-align: center;
 	aling-items: center;
 	font-size: 18px;
 	width: ${({ width = '100%' }) => width};
@@ -21,8 +19,6 @@ export const Button = styled(ButtonContainer)`
 	background-color: rgb(238, 238, 238);
 
 	&:hover {
-		cursor: pointer;
+		cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 	}
 `;
-
-// text-align: center;
