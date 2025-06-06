@@ -47,7 +47,7 @@ const UsersContainer = ({ className }) => {
 
 	return (
 		<PrivateContent access={[ROLE.ADMIN]} serverError={errorMassage}>
-				<div className={className}>
+			<div className={className}>
 				<H2>Пользователи</H2>
 				<div>
 					<TableRow>
@@ -69,8 +69,8 @@ const UsersContainer = ({ className }) => {
 						/>
 					))}
 				</div>
-		</div>
-			</PrivateContent>
+			</div>
+		</PrivateContent>
 	);
 };
 
