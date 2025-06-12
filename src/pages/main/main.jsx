@@ -53,7 +53,7 @@ const MainContainer = ({ className }) => {
 					<div className="no-posts-found">Статьи не найдены</div>
 				)}
 			</div>
-			{lastPage > 1 && posts.langth > 0 && (
+			{lastPage > 1 && posts.length > 0 && (
 				<Pagination page={page} lastPage={lastPage} setPage={setPage} />
 			)}
 		</div>

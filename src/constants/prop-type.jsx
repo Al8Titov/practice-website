@@ -5,11 +5,11 @@ const ROLE_ID = PropTypes.oneOf(Object.values(ROLE))
 
 export const PROP_TYPE = {
 	ROLE_ID,
-	ROLE: PropTypes.oneOf({
+	ROLE: PropTypes.shape({
 		id: ROLE_ID,
 		name: PropTypes.string.isRequired,
 	}),
-	ERROR: PropTypes.shape([PropTypes.string, PropTypes.exact(null)]),
+	ERROR: PropTypes.oneOfType([PropTypes.string, PropTypes.exact(null)]),
 	COMMENT: PropTypes.shape({
 		id: PropTypes.number.isRequired,
 		author: PropTypes.string.isRequired,

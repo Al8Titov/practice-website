@@ -85,6 +85,6 @@ export const SpecialPanel = styled(SpecialPanelContainer)`
 SpecialPanel.propTypes = {
 	id: PropTypes.string.isRequired,
 	publishedAt: PropTypes.string.isRequired,
-	editButton: PropTypes.noda.isRequired,
+	editButton: PropTypes.node.isRequired,
 };
 

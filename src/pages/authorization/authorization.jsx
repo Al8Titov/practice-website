@@ -26,13 +26,13 @@ const authFormSchema = yup.object().shape({
 			/^[\w#%]+$/,
 			'Неверно заполнен пароль. Допускаются только буквы, цифры и знаки # %',
 		)
-		.min(6, 'Невверно заполнен пароль. Минимум 6 символов')
+		.min(6, 'Неверно заполнен пароль. Минимум 6 символов')
 		.max(30, 'Неверно заполнен пароль. Максимум 30 символов'),
 });
 
 const StyledLink = styled(Link)`
 	text-align: center;
-	text-decoretion: underline;
+	text-decoration: underline;
 	margin: 20px 0;
 	font-size: 18px;
 `;

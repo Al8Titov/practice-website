@@ -11,7 +11,7 @@ import styled from 'styled-components';
 const UsersContainer = ({ className }) => {
 	const [users, setUsers] = useState([]);
 	const [roles, setRoles] = useState([]);
-	const [errorMassage, setErrorMassage] = useState(null);
+	const [errorMessage, setErrorMessage] = useState(null);
 	const [shouldUpdateUserList, setShouldUpdateUserList] = useState(false);
 	const userRole = useSelector(selectUserRole);
 
@@ -25,7 +25,7 @@ const UsersContainer = ({ className }) => {
 		Promise.all([requestServer('fetchUsers'), requestServer('fetchRoles')]).then(
 			([usersRes, rolesRes]) => {
 				if (usersRes.error || rolesRes.error) {
-					setErrorMassage(usersRes.error || rolesRes.error);
+					setErrorMessage(usersRes.error || rolesRes.error);
 					return;
 				}
 
@@ -46,7 +46,7 @@ const UsersContainer = ({ className }) => {
 	};
 
 	return (
-		<PrivateContent access={[ROLE.ADMIN]} serverError={errorMassage}>
+		<PrivateContent access={[ROLE.ADMIN]} serverError={errorMessage}>
 			<div className={className}>
 				<H2>Пользователи</H2>
 				<div>
@@ -62,9 +62,7 @@ const UsersContainer = ({ className }) => {
 							login={login}
 							registeredAt={registeredAt}
 							roleId={roleId}
-							roles={roles.filter(
-								({ id: roleId }) => roleId !== ROLE.GUEST,
-							)}
+							roles={roles.filter(({ id }) => Number(id) !== ROLE.GUEST)}
 							onUserRemove={() => onUserRemove(id)}
 						/>
 					))}

@@ -57,25 +57,25 @@ export const PostCard = styled(PostCardContainer)`
 
 	& .post-card-footer {
 		padding: 5px;
-		border-top: 1px solid #ooo;
+		border-top: 1px solid #000;
 	}
 
 	& h4 {
 		margin: 0;
 	}
 
-	& post-card-info {
+	& .post-card-info {
 		display: flex;
 		justify-content: space-between;
 		padding: 5px;
 		margin-top: 5px;
 	}
 
-	& published-at {
+	& .published-at {
 		display: flex;
 	}
 
-	& omments-cout {
+	& .comments-count {
 		display: flex;
 	}
 `;
